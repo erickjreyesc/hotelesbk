@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Hotel extends Model
 {
+    use SoftDeletes;
+    
     /**
      * The table associated with the model.
      *
@@ -19,7 +22,6 @@ class Hotel extends Model
      * @var array
      */
     protected $fillable = [
-        'compania_id',
         'ciudad_id',
         'nombre',
         'direccion',
@@ -28,11 +30,6 @@ class Hotel extends Model
         'estado',
         'nit'
     ];
-
-    public function compania()
-    {
-        return $this->belongsTo(Compania::class, 'compania_id', 'id');
-    }
 
     public function ciudad()
     {

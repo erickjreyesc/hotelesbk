@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Acomodacion extends Model
 {
+    use SoftDeletes;
+
     /**
      * The table associated with the model.
      *
@@ -21,7 +24,7 @@ class Acomodacion extends Model
     protected $fillable = [
         'nombre',
         'descripcion',
-        'boolean'
+        'estado'
     ];
 
     public function habitaciones()

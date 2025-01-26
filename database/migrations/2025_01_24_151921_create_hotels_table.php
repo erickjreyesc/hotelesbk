@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('hoteles', function (Blueprint $table) {
             $table->id()->comment('Llave primaria de la tabla');
-            $table->unsignedBigInteger('compania_id')->nullable()->comment('Llave foránea de la tabla companias.');
-            $table->foreign('compania_id')->references('id')->on('companias');
             $table->unsignedBigInteger('ciudad_id')->nullable()->comment('Llave foránea de la tabla ciudades.');
             $table->foreign('ciudad_id')->references('id')->on('ciudades');
             $table->string('nombre', 200)->comment('Nombre de la hotel');
@@ -24,6 +22,7 @@ return new class extends Migration
             $table->boolean('estado')->nullable()->default(false)->comment('Estado del objeto');
             $table->string('nit', 20)->nullable()->default('numero de identificación tributaria');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

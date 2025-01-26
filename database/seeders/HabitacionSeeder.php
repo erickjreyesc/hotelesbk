@@ -15,15 +15,15 @@ class HabitacionSeeder extends Seeder
         $data = array([
             'nombre' => 'Estándar',
             'descripcion' => 'Habitación estándar',
-            'boolean' => 1,
+            'estado' => 1,
         ],[
             'nombre' => 'Junior',
             'descripcion' => 'Habitación junior',
-            'boolean' => 1,
+            'estado' => 1,
         ],[
             'nombre' => 'Suite',
             'descripcion' => 'Habitación suite',
-            'boolean' => 1,
+            'estado' => 1,
         ]);
 
         foreach ($data as $dato) {

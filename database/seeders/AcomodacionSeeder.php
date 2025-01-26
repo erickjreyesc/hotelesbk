@@ -17,19 +17,19 @@ class AcomodacionSeeder extends Seeder
         $data = array([
             'nombre' => 'Sencilla',
             'descripcion' => 'Categoría sencilla',
-            'boolean' => 1,
+            'estado' => 1,
         ], [
             'nombre' => 'Doble',
             'descripcion' => 'Categoría doble',
-            'boolean' => 1,
+            'estado' => 1,
         ], [
             'nombre' => 'Triple',
             'descripcion' => 'Categoría triple',
-            'boolean' => 1,
+            'estado' => 1,
         ], [
             'nombre' => 'Cuádruple',
             'descripcion' => 'Categoría cuadruple',
-            'boolean' => 1,
+            'estado' => 1,
         ]);
 
         foreach ($data as $dato) {

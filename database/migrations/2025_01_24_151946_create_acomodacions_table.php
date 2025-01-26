@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id()->comment('Llave primaria de la tabla');
             $table->string('nombre', 100)->comment('Nombre de la clasificación');
             $table->text('descripcion')->nullable()->default('Descripción de la clasifición');
-            $table->boolean('boolean')->nullable()->default(false)->comment('Estado del objeto');
+            $table->boolean('estado')->nullable()->default(false)->comment('Estado del objeto');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
