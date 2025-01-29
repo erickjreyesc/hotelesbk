@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
             DepartamentoSeeder::class,
             CiudadSeeder::class,
             HabitacionSeeder::class,
-            AcomodacionSeeder::class
+            AcomodacionSeeder::class,
+            HotelSeeder::class
         ]);
     }
 }

@@ -139,4 +139,13 @@ class HabitacionApiController extends Controller
             return $this->error(404, 'El recurso no existe', $th);
         }
     }
+
+    /**
+     * Display the specified resource.
+     */
+    public function acomodaciones($habitacion)
+    {
+        $results = Habitacion::find($habitacion);
+        return $this->response(200, $results->acomodaciones);
+    }
 }

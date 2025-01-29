@@ -6,10 +6,11 @@ use Illuminate\Support\Facades\Log;
 
 trait JsonTrait
 {
-    public function response($code, $data)
+    public function response($code, $data, $id = null)
     {
         return response()->json([
             'code' => $code,
+            'element_id' => $id,
             'data' => $data
         ]);
     }

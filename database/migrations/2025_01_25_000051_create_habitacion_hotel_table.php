@@ -19,6 +19,8 @@ return new class extends Migration
             $table->foreign('habitacion_id')->references('id')->on('habitaciones');
             $table->unsignedBigInteger('acomodacion_id')->nullable()->comment('Llave foránea de la tabla acomodaciones.');
             $table->foreign('acomodacion_id')->references('id')->on('acomodaciones');
+            $table->integer('canthab')->unsigned()->default(0)->comment('cantidad del habitaciones en el hotel');
+            $table->unique(['hotel_id', 'habitacion_id', 'acomodacion_id']);
             $table->timestamps();
         });
     }

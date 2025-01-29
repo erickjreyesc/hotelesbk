@@ -19,4 +19,9 @@ class Ciudad extends Model
      * @var array
      */
     protected $fillable = ['departamento_id', 'nombre'];
+
+    public function departamento()
+    {
+        return $this->belongsTo(Departamento::class, 'departamento_id', 'id');
+    }
 }

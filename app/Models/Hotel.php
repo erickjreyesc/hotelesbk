@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Hotel extends Model
 {
     use SoftDeletes;
-    
+
     /**
      * The table associated with the model.
      *
@@ -25,10 +25,9 @@ class Hotel extends Model
         'ciudad_id',
         'nombre',
         'direccion',
-        'telefono',
-        'correo',
         'estado',
-        'nit'
+        'nit',
+        'totalhab'
     ];
 
     public function ciudad()
@@ -44,5 +43,10 @@ class Hotel extends Model
     public function habitaciones()
     {
         return $this->belongsToMany(Habitacion::class, 'habitacion_hotel', 'habitacion_id', 'hotel_id');
+    }
+
+    public function habitacionesHotel()
+    {
+        return $this->hasMany(HabitacionHotel::class);
     }
 }

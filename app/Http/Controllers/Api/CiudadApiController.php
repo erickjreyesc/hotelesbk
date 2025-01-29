@@ -21,4 +21,12 @@ class CiudadApiController extends Controller
             return $this->error(422, 'Hubo un error al consultar los datos', $th);
         }
     }
+
+    public function ciudadNombrePorId(Ciudad $ciudad){
+        try {
+            return $this->response(200, $ciudad->nombre);
+        } catch (\Throwable $th) {
+            return $this->error(422, 'Hubo un error al consultar los datos', $th);
+        }
+    }
 }
